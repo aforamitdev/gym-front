@@ -3,7 +3,7 @@
     <SideBar>
       <AdminSideBar />
     </SideBar>
-    <div>
+    <div class="w-full">
       <router-view name="main" />
     </div>
   </div>

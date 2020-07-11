@@ -1,74 +1,95 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
-
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
+/* eslint-disable */
 // admin view
-import AdminView from '../views/AdminView.vue';
-import AdminDashboard from '../components/AdminComponent/AdminDashboard.vue';
-import AdminCreateEvent from '../components/AdminComponent/AdminCreateEvent.vue';
+import AdminView from "../views/AdminView.vue";
+import AdminDashboard from "../components/AdminComponent/AdminDashboard.vue";
+import AdminCreateEvent from "../components/AdminComponent/AdminCreateEvent.vue";
+import AdminManageEvents from "../components/AdminComponent/AdminManageEvents.vue";
+import AdminClubManagement from "../components/AdminComponent/AdminClubManagement.vue";
+import AdminStudents from "../components/AdminComponent/AdminStudents.vue";
 // auth view
-import AuthView from '../views/AuthView.vue';
-import Login from '../components/AuthComponent/Login.vue';
-import Register from '../components/AuthComponent/Register.vue';
+import AuthView from "../views/AuthView.vue";
+import Login from "../components/AuthComponent/Login.vue";
+import Register from "../components/AuthComponent/Register.vue";
 // club View
-import ClubView from '../views/ClubView.vue';
-import ClubDashboard from '../components/ClubComponent/ClubDashboard.vue';
-import ClubPlayers from '../components/ClubComponent/ClubPlayers.vue';
-import ClubEvents from '../components/ClubComponent/ClubEvents.vue';
-import EventDetailClub from '../components/ClubComponent/EventDetailClub.vue';
+import ClubView from "../views/ClubView.vue";
+import ClubDashboard from "../components/ClubComponent/ClubDashboard.vue";
+import ClubPlayers from "../components/ClubComponent/ClubPlayers.vue";
+import ClubEvents from "../components/ClubComponent/ClubEvents.vue";
+import EventDetailClub from "../components/ClubComponent/EventDetailClub.vue";
 // players
-import PlayerView from '../views/PlayerView.vue';
-import PlayerDashboard from '../components/PlayersComponent/PlayerDashboard.vue';
+import PlayerView from "../views/PlayerView.vue";
+import PlayerDashboard from "../components/PlayersComponent/PlayerDashboard.vue";
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
+    path: "/",
+    name: "Home",
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
+    path: "/about",
+    name: "About",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue'),
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   // admin components
   {
-    path: '/admin',
+    path: "/admin",
     // name: 'adminView',
     component: AdminView,
     children: [
       {
-        path: '/',
+        path: "/",
         components: {
           main: AdminDashboard,
         },
       },
       {
-        path: 'create-event',
+        path: "create-event",
         components: {
           main: AdminCreateEvent,
+        },
+      },
+      {
+        path: "manage-event",
+        components: {
+          main: AdminManageEvents,
+        },
+      },
+      {
+        path: "admin-club",
+        components: {
+          main: AdminClubManagement,
+        },
+      },
+      {
+        path: "admin-students",
+        components: {
+          main: AdminStudents,
         },
       },
     ],
   },
   // auth component
   {
-    path: '/auth',
+    path: "/auth",
     component: AuthView,
     children: [
       {
-        path: 'login',
+        path: "login",
         components: {
           main: Login,
         },
       },
       {
-        path: 'register',
+        path: "register",
         components: {
           main: Register,
         },
@@ -77,29 +98,29 @@ const routes = [
   },
   // clubs components
   {
-    path: '/club',
+    path: "/club",
     component: ClubView,
     children: [
       {
-        path: '/',
+        path: "/",
         components: {
           main: ClubDashboard,
         },
       },
       {
-        path: 'club-player',
+        path: "club-player",
         components: {
           main: ClubPlayers,
         },
       },
       {
-        path: 'club-events',
+        path: "club-events",
         components: {
           main: ClubEvents,
         },
       },
       {
-        path: 'club-events/:id',
+        path: "club-events/:id",
         components: {
           main: EventDetailClub,
         },
@@ -108,11 +129,12 @@ const routes = [
   },
   // players dashboard
   {
-    path: '/player',
+    path: "/player",
     component: PlayerView,
+
     children: [
       {
-        path: '/',
+        path: "/",
         components: {
           main: PlayerDashboard,
         },
@@ -122,7 +144,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes,
 });

@@ -1,8 +1,8 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    sans: ["Helvetica", "Arial", "sans-serif"],
   },
   variants: {},
   plugins: [],
-}
+};
