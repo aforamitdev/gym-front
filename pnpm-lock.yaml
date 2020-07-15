@@ -7,6 +7,7 @@ dependencies:
   vue-router: 3.3.2
   vuelidate: 0.7.5
   vuex: 3.4.0_vue@2.6.11
+  vuex-map-fields: 1.4.0
 devDependencies:
   '@vue/cli-plugin-babel': 4.4.1_@vue+cli-service@4.4.1
   '@vue/cli-plugin-eslint': 4.4.1_273d0fb808842ad773f4e9eaa0013e01
@@ -8780,6 +8781,10 @@ packages:
       npm: '>= 3.0.0'
     resolution:
       integrity: sha512-GAAG8QAFVp7BFeQlNaThpTbimq3+HypBPNwdkCkHZZeVaD5zmXXfhp357dcUJXHXTZjSln0PvP6wiwLZXkFTwg==
+  /vuex-map-fields/1.4.0:
+    dev: false
+    resolution:
+      integrity: sha512-fwRgCwzgxS2GB3ADbPtO6laDlBVLzu+yV+60yZ6/nqPqbn2Ds5G85NeUZojOVLWcaFIMNpuG0ukZ9KKJXh/95A==
   /vuex/3.4.0_vue@2.6.11:
     dependencies:
       vue: 2.6.11
@@ -9292,3 +9297,4 @@ specifiers:
   vue-template-compiler: ^2.6.11
   vuelidate: ^0.7.5
   vuex: ^3.4.0
+  vuex-map-fields: ^1.4.0

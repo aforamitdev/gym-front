@@ -1,15 +1,13 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)
+import Vue from "vue";
+import Vuex from "vuex";
+import AdminStore from "./AdminStore";
+import Auth from "./auth";
+Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+  strict: true, //remove before deployin
   modules: {
-  }
-})
+    AdminStore,
+    Auth,
+  },
+});
