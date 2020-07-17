@@ -14,7 +14,11 @@
         <div class="flex space-x-6">
           <!-- create ebent starts -->
           <div class="w-1/2 bg-white rounded-sm">
-            <BoxHeading heading="Event Details" subheading="Basics information about the event" />
+            <BoxHeading
+              heading="Event Details"
+              subheading="Basics information about the event"
+              class="px-2 py-2"
+            />
             <div class="px-4 py-2 space-y-2">
               <!-- input for  -->
               <label for="EventName" class="text-base font-bold my-2">Event Title</label>
@@ -76,7 +80,11 @@
           <!-- crate events ends  -->
 
           <div class="w-1/2 bg-white rounded-sm">
-            <BoxHeading heading="Event Level" subheading="Choose Appropriate level for the Event" />
+            <BoxHeading
+              heading="Event Level"
+              subheading="Choose Appropriate level for the Event"
+              class="px-2 py-2"
+            />
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="bg-gray-300 w-full">
-      <div class="p-5 justify-center mt-32">
+      <div class="p-5 justify-center mt-32 h-1/">
         <div class="grid grid-cols-6">
           <BoxHeading
             heading="Registraion"
@@ -45,40 +45,58 @@
             </div>
           </div>
         </div>
-        <div v-if="step === 1">
-          this is step 1
-          <input type="radio" value="student" v-model="option" />
-          <label for="student">studetn</label>
-          <input type="radio" value="club" v-model="option" v-on:change="log" />
-          <label for="club">club</label>
-          <div v-if="option === 'club'">
-            <div>load clubs name</div>
+        <div v-if="step === 1" class="grid grid-cols-6">
+          <div class="sm:col-start-3 sm:col-end-5 col-start-1 col-end-7">
+            <div class="py-3">
+              <div class="flex flex-col space-y-2">
+                <div class="text-xl text-gray-700">Choose Role</div>
+                <div class="flex px-4 py-4 bg-gray-600">
+                  <input type="radio" value="student" v-model="option" />
+                  <label for="student" class="uppercase text-lg text-gray-100 px-3">Player</label>
+                </div>
+                <div v-show="option === 'student'">
+                  <select name="clubselect" v-model="club" class="px-2 py-2 w-full rounded-sm">
+                    <option disabled value="None">Please Select your Club</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                  </select>
+                </div>
+                <div class="flex px-4 py-4 bg-gray-600">
+                  <input type="radio" value="club" v-model="option" v-on:change="log" />
+                  <label for="club" class="uppercase text-lg text-gray-100 px-3">club</label>
+                </div>
+                <div v-show="option==='club'">
+                  <input
+                    type="clubname"
+                    class="px-2 py-2 w-full rounded-sm"
+                    placeholder="Enter Club Name"
+                  />
+                </div>
+                <button
+                  class="w-full bg-blue-500 uppercase text-xl text-white font-bold py-2 px-2 rounded-sm"
+                >submit</button>
+              </div>
+            </div>
           </div>
-          <div v-else>
-            <input type="clubname" />
-          </div>
-        </div>
-        <div v-if="step === 2">
-          this is step 2
-          <div></div>
         </div>
       </div>
       <!-- buttons -->
       <div class="grid grid-cols-6">
-        <span class="col-end-5 flex space-x-2">
-          <div v-show="step > 0">
+        <div class="col-start-3 col-end-5 space-x-2">
+          <span v-show="step === 1">
             <button
               @click="step--"
-              class="px-3 py-2 bg-red-400 rounded-sm text-white uppercase"
+              class="px-3 py-2 bg-red-400 rounded-sm text-white uppercase w-full"
             >prevous</button>
-          </div>
-          <div>
+          </span>
+          <span v-show="step==0" class="inline-block w-full">
             <button
               @click="step++"
-              class="px-3 py-2 bg-blue-400 rounded-sm text-white uppercase"
+              class="px-3 py-2 bg-blue-400 rounded-sm text-white uppercase w-full"
             >next</button>
-          </div>
-        </span>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -94,7 +112,7 @@ export default {
   },
   data: () => {
     return {
-      step: 0,
+      step: 1,
       option: ""
     };
   },
