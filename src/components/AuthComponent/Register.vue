@@ -14,6 +14,7 @@
             class="sm:col-start-3 sm:col-end-6 col-start-1 col-end-7 font-semibold text-gray-700"
           />
         </div>
+        <!-- step one starts  -->
         <div v-if="step === 0" class="grid grid-cols-6">
           <div class="space-y-3 sm:col-start-3 sm:col-end-5 col-start-1 col-end-7">
             <div class="flex flex-col justify-center">
@@ -45,17 +46,19 @@
             </div>
           </div>
         </div>
+        <!-- step one ends  -->
+        <!-- step two ends  -->
         <div v-if="step === 1" class="grid grid-cols-6">
           <div class="sm:col-start-3 sm:col-end-5 col-start-1 col-end-7">
             <div class="py-3">
               <div class="flex flex-col space-y-2">
                 <div class="text-xl text-gray-700">Choose Role</div>
                 <div class="flex px-4 py-4 bg-gray-600">
-                  <input type="radio" value="student" v-model="option" />
-                  <label for="student" class="uppercase text-lg text-gray-100 px-3">Player</label>
+                  <input type="radio" value="player" v-model="option" />
+                  <label for="player" class="uppercase text-lg text-gray-100 px-3">Player</label>
                 </div>
-                <div v-show="option === 'student'">
-                  <select name="clubselect" v-model="club" class="px-2 py-2 w-full rounded-sm">
+                <div v-show="option === 'player'">
+                  <select name="clubselect" v-model="clubname" class="px-2 py-2 w-full rounded-sm">
                     <option disabled value="None">Please Select your Club</option>
                     <option>A</option>
                     <option>B</option>
@@ -63,7 +66,7 @@
                   </select>
                 </div>
                 <div class="flex px-4 py-4 bg-gray-600">
-                  <input type="radio" value="club" v-model="option" v-on:change="log" />
+                  <input type="radio" value="club" v-model="option " v-on:change="log" />
                   <label for="club" class="uppercase text-lg text-gray-100 px-3">club</label>
                 </div>
                 <div v-show="option==='club'">
@@ -71,13 +74,16 @@
                     type="clubname"
                     class="px-2 py-2 w-full rounded-sm"
                     placeholder="Enter Club Name"
+                    v-model="clubname"
                   />
                 </div>
                 <button
                   class="w-full bg-blue-500 uppercase text-xl text-white font-bold py-2 px-2 rounded-sm"
+                  @click="$store.dispatch('register')"
                 >submit</button>
               </div>
             </div>
+            <!-- steop two ends  -->
           </div>
         </div>
       </div>
@@ -90,7 +96,7 @@
               class="px-3 py-2 bg-red-400 rounded-sm text-white uppercase w-full"
             >prevous</button>
           </span>
-          <span v-show="step==0" class="inline-block w-full">
+          <span v-show="step==0 " class="inline-block w-full">
             <button
               @click="step++"
               class="px-3 py-2 bg-blue-400 rounded-sm text-white uppercase w-full"
@@ -118,7 +124,7 @@ export default {
   },
   methods: {
     log() {
-      console.log("clo");
+      this.role = "clubadmin";
     }
   },
   computed: {
