@@ -38,7 +38,7 @@
             <div class="flex flex-col justify-center">
               <label for="EmailAddress" class="text-xl text-gray-700 font-semibold">Password</label>
               <input
-                type="text"
+                type="password"
                 v-model="password"
                 class="border-gray-400 border-solid border-4 py-2 px-2 rounded-sm font-semibold"
                 placeholder="Secrate Password"

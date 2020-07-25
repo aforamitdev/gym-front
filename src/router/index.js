@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import store from "../store/index";
 import Home from "../views/Home.vue";
 /* eslint-disable */
 // admin view
@@ -22,6 +23,7 @@ import EventDetailClub from "../components/ClubComponent/EventDetailClub.vue";
 // players
 import PlayerView from "../views/PlayerView.vue";
 import PlayerDashboard from "../components/PlayersComponent/PlayerDashboard.vue";
+import { Store } from "vuex";
 Vue.use(VueRouter);
 
 const routes = [
@@ -149,4 +151,13 @@ const router = new VueRouter({
   routes,
 });
 
+router.beforeEach((to, from, next) => {
+  console.log("This is execution", to, from);
+  if (localStorage.getItem("token")) {
+    console.log(store);
+    next();
+  }
+  next();
+  // next({name:<router-name>})
+});
 export default router;

@@ -71,6 +71,11 @@
                       <path :d="path.time" />
                     </svg>
                   </div>
+                  <div>
+                    <button
+                      class="bg-blue-400 px-2 py-2 my-2 w-full uppercase text-xl text-white"
+                    >Sumbit</button>
+                  </div>
                 </div>
                 <!-- date time time ends  -->
               </div>
