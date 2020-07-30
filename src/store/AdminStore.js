@@ -1,10 +1,14 @@
 const state = {
   state: [12, 2, 32],
+  clubs: [],
 };
 
 const getters = {};
 
-const actions = {};
+const actions = {
+  //! events managment
+  //! clubs managment
+};
 
 const mutations = {};
 

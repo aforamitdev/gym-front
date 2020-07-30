@@ -2,7 +2,7 @@ import { getField, updateField } from "vuex-map-fields";
 import api from "../../api";
 const state = {
   me: {},
-  userDate: {},
+  userData: {},
   userDetail: {
     name: "",
     email: "",
@@ -18,6 +18,9 @@ const state = {
 
 const getters = {
   getField,
+  getUserData: (state) => {
+    return state.userData;
+  },
 };
 
 const actions = {
@@ -33,10 +36,12 @@ const actions = {
     api
       .post("/auth/login", state.loginDetail)
       .then((res) => {
-        console.log(res);
+        console.log(res.data.token);
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("role", res.data.role);
+
         commit("SET_LOGIN_DATA", {
-          token: res.data.token.token,
+          token: res.data.token,
           role: res.data.role,
         });
       })

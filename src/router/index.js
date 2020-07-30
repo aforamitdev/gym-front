@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import store from "../store/index";
+// import store from "../store/index";
 import Home from "../views/Home.vue";
 /* eslint-disable */
 // admin view
@@ -23,7 +23,7 @@ import EventDetailClub from "../components/ClubComponent/EventDetailClub.vue";
 // players
 import PlayerView from "../views/PlayerView.vue";
 import PlayerDashboard from "../components/PlayersComponent/PlayerDashboard.vue";
-import { Store } from "vuex";
+// import { Store } from "vuex";
 Vue.use(VueRouter);
 
 const routes = [
@@ -102,9 +102,11 @@ const routes = [
   {
     path: "/club",
     component: ClubView,
+    meta: { requiresAuth: true },
     children: [
       {
         path: "/",
+        name: "clubadmin",
         components: {
           main: ClubDashboard,
         },
@@ -153,11 +155,23 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   console.log("This is execution", to, from);
-  if (localStorage.getItem("token")) {
-    console.log(store);
-    next();
-  }
-  next();
+
+  // if (to.matched.some((record) => record.meta.requiresAuth)) {
+  //   if (!localStorage.getItem("token")) {
+  //     next({ path: "/login" });
+  //   } else {
+  //     next({ name: localStorage.getItem("role") });
+  //   }
+  //   next();
+  // }
+
+  // if (!localStorage.getItem("token") && requiresAuth) {
+  //   next({ path: "/login" });
+  // } else {
+  //   next();
+  // }
   // next({name:<router-name>})
+
+  next();
 });
 export default router;
