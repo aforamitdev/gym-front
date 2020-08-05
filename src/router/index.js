@@ -154,24 +154,18 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log("This is execution", to, from);
-
-  // if (to.matched.some((record) => record.meta.requiresAuth)) {
-  //   if (!localStorage.getItem("token")) {
-  //     next({ path: "/login" });
-  //   } else {
-  //     next({ name: localStorage.getItem("role") });
-  //   }
-  //   next();
-  // }
-
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    console.log("This is execution", to, from);
+    if (!localStorage.getItem("token")) {
+      next({ path: "/auth/login" });
+    }
+  }
+  next();
   // if (!localStorage.getItem("token") && requiresAuth) {
   //   next({ path: "/login" });
   // } else {
   //   next();
   // }
   // next({name:<router-name>})
-
-  next();
 });
 export default router;
