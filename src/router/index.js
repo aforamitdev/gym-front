@@ -102,11 +102,13 @@ const routes = [
   {
     path: "/club",
     component: ClubView,
-    meta: { requiresAuth: true },
+    meta: { requiresAuth: "clubadmin" },
     children: [
       {
         path: "/",
         name: "clubadmin",
+        meta: { requiresAuth: "clubadmin" },
+
         components: {
           main: ClubDashboard,
         },
@@ -154,18 +156,28 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
-    console.log("This is execution", to, from);
-    if (!localStorage.getItem("token")) {
-      next({ path: "/auth/login" });
+  console.log(to);
+  const { requiresAuth } = to.meta;
+  console.log(requiresAuth);
+  console.log(localStorage.getItem("token") && requiresAuth);
+  if (requiresAuth) {
+    if (
+      to.matched.some(
+        (record) => record.meta.requiresAuth === localStorage.getItem("role")
+      )
+    ) {
+      console.log(to.matched);
+      next();
+    } else {
+      next({ name: "/auth/login" });
     }
   }
-  next();
   // if (!localStorage.getItem("token") && requiresAuth) {
   //   next({ path: "/login" });
   // } else {
   //   next();
   // }
   // next({name:<router-name>})
+  next();
 });
 export default router;

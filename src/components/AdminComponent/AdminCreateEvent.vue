@@ -4,7 +4,7 @@
       <div class="mx-2 my-2">
         <div class="text-2xl">
           <span class="text-gray-900">Admin /</span>
-          <span class="text-gray-700">Create Event</span>
+          <span class="text-gray-700">Create Event </span>
         </div>
       </div>
     </div>
@@ -21,60 +21,82 @@
             />
             <div class="px-4 py-2 space-y-2">
               <!-- input for  -->
-              <label for="EventName" class="text-base font-bold my-2">Event Title</label>
+              <label
+                for="EventName"
+                class="text-base font-bold my-2"
+              >Event Title</label>
               <div class="flex my-2">
                 <input
                   type="text"
                   class="border border-gray-400 bg-gray-300 py-2 px-10 rounded-sm text-lg w-full font-normal relative justify-center"
                   v-model="eventTitle"
                 />
-                <svg class="h-6 w-6 absolute my-2 mx-2" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  class="h-6 w-6 absolute my-2 mx-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path :d="path.home" />
                 </svg>
               </div>
-              <label for="EventVanue" class="text-base font-bold">Event Vanue</label>
+              <label
+                for="EventVanue"
+                class="text-base font-bold"
+              >Event Vanue</label>
               <div class="flex">
                 <input
                   type="text"
                   class="border border-gray-400 bg-gray-300 py-2 px-10 rounded-sm text-lg w-full font-normal relative justify-center"
                   v-model="eventAddress"
                 />
-                <svg class="h-6 w-6 absolute my-2 mx-2" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  class="h-6 w-6 absolute my-2 mx-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path :d="path.map" />
                 </svg>
               </div>
               <!-- date input -->
               <div class="flex space-x-3">
                 <div class="w-1/2">
-                  <label for="EventVanue" class="text-base font-bold">Event Vanue</label>
+                  <label
+                    for="EventVanue"
+                    class="text-base font-bold"
+                  >Event Vanue</label>
                   <div class="flex items-center">
                     <input
                       type="date"
                       class="border border-gray-400 bg-gray-300 py-2 px-10 rounded-sm text-lg w-full font-normal relative justify-center"
                       v-model="eventDate"
                     />
-                    <svg class="h-6 w-6 absolute my-2 mx-2" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      class="h-6 w-6 absolute my-2 mx-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path :d="path.date" />
                     </svg>
                   </div>
                 </div>
                 <!-- date time time -->
                 <div class="w-1/2">
-                  <label for="EventVanue" class="text-base font-bold">Event Time</label>
+                  <label
+                    for="EventVanue"
+                    class="text-base font-bold"
+                  >Event Time</label>
                   <div class="flex">
                     <input
                       type="time"
                       class="border border-gray-400 bg-gray-300 py-2 px-10 rounded-sm text-lg w-full font-normal relative justify-center"
                       v-model="eventTime"
                     />
-                    <svg class="h-6 w-6 absolute my-2 mx-2" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      class="h-6 w-6 absolute my-2 mx-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path :d="path.time" />
                     </svg>
                   </div>
                   <div>
-                    <button
-                      class="bg-blue-400 px-2 py-2 my-2 w-full uppercase text-xl text-white"
-                    >Sumbit</button>
+                    <button class="bg-blue-400 px-2 py-2 my-2 w-full uppercase text-xl text-white">Sumbit</button>
                   </div>
                 </div>
                 <!-- date time time ends  -->
