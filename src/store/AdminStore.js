@@ -1,9 +1,25 @@
 import api from "../../api";
+import { createHelpers } from "vuex-map-fields";
+
+const { getCreateEventFields, updateCreateEventFields } = createHelpers({
+  getterType: "getCreateEventFields",
+  mutationType: "updateCreateEventFields",
+});
 const state = {
   allevents: [],
+  createEventData: {
+    eventTitle: "",
+    eventAddress: "",
+    pin: "",
+    eventDate: "",
+    eventTime: "",
+    level: "",
+  },
 };
 
-const getters = {};
+const getters = {
+  getCreateEventFields,
+};
 
 const actions = {
   //! events managment
@@ -15,13 +31,13 @@ const actions = {
 };
 
 const mutations = {
+  updateCreateEventFields,
   ["SET_ALL_EVENTS"](state, events) {
     state.allevents = events.data;
   },
 };
 
 export default {
-  namespace: true,
   state,
   getters,
   actions,

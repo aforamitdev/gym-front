@@ -3,21 +3,27 @@
     <div class="mx-2 w-1/2 flex justify-center">
       <div class="space-y-3 sm:col-start-3 sm:col-end-5 col-start-1 col-end-7">
         <div class="flex flex-col justify-center">
-          <label for="EmailAddress" class="text-xl text-gray-700 font-semibold">Email</label>
+          <label
+            for="EmailAddress"
+            class="text-xl text-gray-700 font-semibold"
+          >Email</label>
           <input
             type="text"
-            v-model="email"
             class="border-gray-400 border-solid border-4 py-2 px-2 rounded-sm font-semibold"
             placeholder="you@example.com"
+            v-model="email"
           />
         </div>
         <div class="flex flex-col justify-center">
-          <label for="EmailAddress" class="text-xl text-gray-700 font-semibold">Password</label>
+          <label
+            for="EmailAddress"
+            class="text-xl text-gray-700 font-semibold"
+          >Password</label>
           <input
             type="password"
-            v-model="password"
             class="border-gray-400 border-solid border-4 py-2 px-2 rounded-sm font-semibold"
             placeholder="Secrate Password"
+            v-model="password"
           />
         </div>
         <button
@@ -30,7 +36,11 @@
 </template>
 
 <script>
-import { mapFields } from "vuex-map-fields";
+import { createHelpers } from "vuex-map-fields";
+const { mapFields } = createHelpers({
+  getterType: "getAuthFields",
+  mutationType: "updateAuthFields"
+});
 export default {
   name: "login-page",
   computed: {

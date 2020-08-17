@@ -63,10 +63,10 @@
           >
             <td class="border px-4 py-2">{{event.title}}</td>
             <td class="border px-4 py-2">{{event.location}}</td>
-            <td class="border px-4 py-2">{{event.eventDate | moment("d,MMMM")}}</td>
+            <td class="border px-4 py-2">{{event.eventDate | moment("d/MMMM/YY")}}</td>
             <td class="border px-4 py-2 text-blue-500">{{event.participant.length}}</td>
             <td class="border px-4 py-2 text-blue-500"> {{event.clubparticipant.length}}</td>
-            <td class="border px-4 py-2 ">{{event.level}}</td>
+            <td class="border px-4 py-2">{{event.level}}</td>
             <td class="border px-4 py-2">status</td>
           </tr>
         </tbody>

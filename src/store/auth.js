@@ -1,6 +1,10 @@
-import { getField, updateField } from "vuex-map-fields";
 import api from "../../api";
 import router from "../router/index";
+import { createHelpers } from "vuex-map-fields";
+const { getAuthFields, updateAuthFields } = createHelpers({
+  getterType: "getAuthFields",
+  mutationType: "updateAuthFields",
+});
 const state = {
   me: {},
   userData: {},
@@ -18,7 +22,7 @@ const state = {
 };
 
 const getters = {
-  getField,
+  getAuthFields,
   getUserData: (state) => {
     return state.userData;
   },
@@ -54,7 +58,7 @@ const actions = {
 };
 
 const mutations = {
-  updateField,
+  updateAuthFields,
   ERROR(state, payload) {
     console.log(payload);
   },

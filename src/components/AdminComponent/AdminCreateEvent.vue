@@ -10,7 +10,7 @@
     </div>
     <!-- forms  -->
     <div>
-      <div class="w-full mx-4">
+      <div class="px-4">
         <div class="flex space-x-6">
           <!-- create ebent starts -->
           <div class="w-1/2 bg-white rounded-sm">
@@ -29,7 +29,7 @@
                 <input
                   type="text"
                   class="border border-gray-400 bg-gray-300 py-2 px-10 rounded-sm text-lg w-full font-normal relative justify-center"
-                  v-model="eventTitle"
+                  v-model="createEventData.eventTitle"
                 />
                 <svg
                   class="h-6 w-6 absolute my-2 mx-2"
@@ -46,7 +46,7 @@
                 <input
                   type="text"
                   class="border border-gray-400 bg-gray-300 py-2 px-10 rounded-sm text-lg w-full font-normal relative justify-center"
-                  v-model="eventAddress"
+                  v-model="createEventData.eventAddress"
                 />
                 <svg
                   class="h-6 w-6 absolute my-2 mx-2"
@@ -66,7 +66,7 @@
                     <input
                       type="date"
                       class="border border-gray-400 bg-gray-300 py-2 px-10 rounded-sm text-lg w-full font-normal relative justify-center"
-                      v-model="eventDate"
+                      v-model="createEventData.eventDate"
                     />
                     <svg
                       class="h-6 w-6 absolute my-2 mx-2"
@@ -86,7 +86,7 @@
                     <input
                       type="time"
                       class="border border-gray-400 bg-gray-300 py-2 px-10 rounded-sm text-lg w-full font-normal relative justify-center"
-                      v-model="eventTime"
+                      v-model="createEventData.eventTime"
                     />
                     <svg
                       class="h-6 w-6 absolute my-2 mx-2"
@@ -121,9 +121,16 @@
 </template>
 
 <script>
+import { createHelpers } from "vuex-map-fields";
 import { required } from "vuelidate/lib/validators";
 import BoxHeading from "../../utils/BoxHeading";
 import icons from "../icons";
+
+const { mapFields } = createHelpers({
+  getterType: "getCreateEventFields",
+  mutationType: "updateCreateEventFields"
+});
+
 export default {
   name: "create-event",
   components: {
@@ -144,6 +151,7 @@ export default {
     }
   },
   computed: {
+    ...mapFields(["createEventData"]),
     path() {
       return icons;
     }
