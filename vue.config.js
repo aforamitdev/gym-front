@@ -1,3 +1,3 @@
-module.exports = {
-  publicPath: "../gym-ocen/dist",
-};
+// module.exports = {
+//   publicPath: "../gym-ocen/dist",
+// };

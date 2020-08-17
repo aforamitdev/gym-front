@@ -45,34 +45,46 @@ const routes = [
   {
     path: "/admin",
     // name: 'adminView',
+    meta: { requiresAuth: "admin" },
+
     component: AdminView,
     children: [
       {
         path: "/",
+        meta: { requiresAuth: "admin" },
+        name: "admin",
         components: {
           main: AdminDashboard,
         },
       },
       {
         path: "create-event",
+        meta: { requiresAuth: "admin" },
+
         components: {
           main: AdminCreateEvent,
         },
       },
       {
         path: "manage-event",
+        meta: { requiresAuth: "admin" },
+
         components: {
           main: AdminManageEvents,
         },
       },
       {
         path: "admin-club",
+        meta: { requiresAuth: "admin" },
+
         components: {
           main: AdminClubManagement,
         },
       },
       {
         path: "admin-students",
+        meta: { requiresAuth: "admin" },
+
         components: {
           main: AdminStudents,
         },
@@ -115,18 +127,24 @@ const routes = [
       },
       {
         path: "club-player",
+        meta: { requiresAuth: "clubadmin" },
+
         components: {
           main: ClubPlayers,
         },
       },
       {
         path: "club-events",
+        meta: { requiresAuth: "clubadmin" },
+
         components: {
           main: ClubEvents,
         },
       },
       {
         path: "club-events/:id",
+        meta: { requiresAuth: "clubadmin" },
+
         components: {
           main: EventDetailClub,
         },
@@ -169,7 +187,7 @@ router.beforeEach((to, from, next) => {
       console.log(to.matched);
       next();
     } else {
-      next({ name: "/auth/login" });
+      next({ path: "/auth/login" });
     }
   }
   // if (!localStorage.getItem("token") && requiresAuth) {

@@ -1,5 +1,6 @@
 import { getField, updateField } from "vuex-map-fields";
 import api from "../../api";
+import router from "../router/index";
 const state = {
   me: {},
   userData: {},
@@ -44,6 +45,7 @@ const actions = {
           token: res.data.token,
           role: res.data.role,
         });
+        router.push({ name: res.data.role });
       })
       .catch((error) => {
         console.log(error);

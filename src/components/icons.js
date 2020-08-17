@@ -7,5 +7,6 @@ const icons = {
     "M4 4h2V3h8v1h2V3h2v3H2V3h2v1zM2 8v10h16V8H2zm4-7h8V0h2v1h2a2 2 0 012 2v15a2 2 0 01-2 2H2a2 2 0 01-2-2V3a2 2 0 012-2h2V0h2v1z",
   time:
     "M11 22C4.925 22 0 17.075 0 11S4.925 0 11 0s11 4.925 11 11-4.925 11-11 11zm0-2a9 9 0 100-18 9 9 0 000 18zm5-10h-4V5h-2v7h6v-2z",
+  sort: "M6 9l6 6 6-6",
 };
 export default icons;

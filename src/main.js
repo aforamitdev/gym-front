@@ -5,7 +5,9 @@ import router from "./router";
 import store from "./store";
 import "../src/assets/styles/styles.css";
 import Vuelidate from "vuelidate";
+import Vuemoment from "vue-moment";
 Vue.use(Vuelidate);
+Vue.use(Vuemoment);
 Vue.config.productionTip = false;
 
 new Vue({
