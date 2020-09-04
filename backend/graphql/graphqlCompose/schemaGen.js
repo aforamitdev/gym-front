@@ -1,8 +1,8 @@
 const { schemaComposer } = require("graphql-compose");
 
-const { userMutations, userQuery } = require("./userSchemaGen");
-const { playerMutations, playerQuery } = require("./playerSchemaGen");
-const { clubMutations, clubQuery } = require("./clubSchemaGen");
+const { userMutations, userQuery } = require("./schemas/userSchemaGen");
+const { playerMutations, playerQuery } = require("./schemas/playerSchemaGen");
+const { clubMutations, clubQuery } = require("./schemas/clubSchemaGen");
 
 // userQuery.add
 

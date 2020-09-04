@@ -14,5 +14,15 @@ module.exports = {
       "warn",
       { vars: "all", args: "after-used", ignoreRestSiblings: false },
     ],
+    "comma-dangle": [
+      "error",
+      {
+        arrays: "ignore",
+        objects: "ignore",
+        imports: "ignore",
+        exports: "ignore",
+        functions: "ignore",
+      },
+    ],
   },
 };

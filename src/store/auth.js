@@ -1,6 +1,8 @@
 import api from "../../api";
 import router from "../router/index";
 import { createHelpers } from "vuex-map-fields";
+import graphqlClient from "../utils/graphql";
+import gql from "graphql-tag";
 const { getAuthFields, updateAuthFields } = createHelpers({
   getterType: "getAuthFields",
   mutationType: "updateAuthFields",
@@ -54,6 +56,20 @@ const actions = {
       .catch((error) => {
         console.log(error);
       });
+  },
+  async test() {
+    const response = await graphqlClient.query({
+      query: gql`
+        query {
+          userMany {
+            name
+            name
+            role
+          }
+        }
+      `,
+    });
+    console.log(response);
   },
 };
 
