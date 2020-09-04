@@ -21,10 +21,9 @@
             />
             <div class="px-4 py-2 space-y-2">
               <!-- input for  -->
-              <label
-                for="EventName"
-                class="text-base font-bold my-2"
-              >Event Title</label>
+              <label for="EventName" class="text-base font-bold my-2"
+                >Event Title</label
+              >
               <div class="flex my-2">
                 <input
                   type="text"
@@ -38,10 +37,9 @@
                   <path :d="path.home" />
                 </svg>
               </div>
-              <label
-                for="EventVanue"
-                class="text-base font-bold"
-              >Event Vanue</label>
+              <label for="EventVanue" class="text-base font-bold"
+                >Event Vanue</label
+              >
               <div class="flex">
                 <input
                   type="text"
@@ -58,10 +56,9 @@
               <!-- date input -->
               <div class="flex space-x-3">
                 <div class="w-1/2">
-                  <label
-                    for="EventVanue"
-                    class="text-base font-bold"
-                  >Event Vanue</label>
+                  <label for="EventVanue" class="text-base font-bold"
+                    >Event Vanue</label
+                  >
                   <div class="flex items-center">
                     <input
                       type="date"
@@ -78,10 +75,9 @@
                 </div>
                 <!-- date time time -->
                 <div class="w-1/2">
-                  <label
-                    for="EventVanue"
-                    class="text-base font-bold"
-                  >Event Time</label>
+                  <label for="EventVanue" class="text-base font-bold"
+                    >Event Time</label
+                  >
                   <div class="flex">
                     <input
                       type="time"
@@ -96,7 +92,11 @@
                     </svg>
                   </div>
                   <div>
-                    <button class="bg-blue-400 px-2 py-2 my-2 w-full uppercase text-xl text-white">Sumbit</button>
+                    <button
+                      class="bg-blue-400 px-2 py-2 my-2 w-full uppercase text-xl text-white"
+                    >
+                      Sumbit
+                    </button>
                   </div>
                 </div>
                 <!-- date time time ends  -->
@@ -128,13 +128,13 @@ import icons from "../icons";
 
 const { mapFields } = createHelpers({
   getterType: "getCreateEventFields",
-  mutationType: "updateCreateEventFields"
+  mutationType: "updateCreateEventFields",
 });
-
+// /as
 export default {
   name: "create-event",
   components: {
-    BoxHeading
+    BoxHeading,
   },
   data: () => {
     return {
@@ -142,20 +142,20 @@ export default {
       eventAddress: "",
       pin: "",
       eventDate: "",
-      eventTime: ""
+      eventTime: "",
     };
   },
   validations: {
     eventTitle: {
-      required
-    }
+      required,
+    },
   },
   computed: {
     ...mapFields(["createEventData"]),
     path() {
       return icons;
-    }
-  }
+    },
+  },
 };
 </script>
 
