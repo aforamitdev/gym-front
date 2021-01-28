@@ -17,11 +17,7 @@
         <div>
           <div class="absolute flex items-center justify-between w-full px-16">
             <div>
-              <img
-                src="http://thegymnast.in/wp-content/uploads/2016/09/logo-new.png"
-                alt=""
-                class="s mx-10 my-5"
-              />
+              <img src="../assets/logo-new.png" alt="" class="s mx-10 my-5" />
             </div>
             <div class="bg-blue-700 rounded-sm text-white font-bold px-3 py-2">
               Login To Your Account
@@ -33,13 +29,13 @@
         <div>
           <div>
             <img
-              src="http://thegymnast.in/wp-content/uploads/2016/12/banner1.png"
+              src="../assets/banner1.png"
               alt=""
               class="h-1/2 object-cover"
             />
           </div>
           <div
-            class="absolute top-1/4 left-12 text-4xl text-white text-transparent w-1/2  "
+            class="absolute top-1/4 left-12 text-4xl text-white text-transparent w-1/2"
           >
             <div>
               We develop every child by understanding their unique abilities and
@@ -65,7 +61,7 @@
               Our Programs
             </div>
             <div class="flex items-center py-5">
-              <div class="flex   px-10  items-center space-x-2 ">
+              <div class="flex px-10 items-center space-x-2">
                 <div
                   class="px-3 py-3 bg-blue-500 border-2 border-blue-600 rounded-sm hover:bg-blue-600 text-white font-bold"
                 >
@@ -102,12 +98,10 @@
                 </div>
                 <div>
                   <div
-                    class=" text-gray-700  bg-white  px-2 shadow-sm rounded-sm mx-10 py-3"
+                    class="text-gray-700 bg-white px-2 shadow-sm rounded-sm mx-10 py-3"
                   >
-                    <div class="flex items-center justify-between space-x-2 ">
-                      <div class="font-bold">
-                        Fee Update Notics
-                      </div>
+                    <div class="flex items-center justify-between space-x-2">
+                      <div class="font-bold">Fee Update Notics</div>
                       <div><icons name="file" /></div>
                     </div>
                   </div>
@@ -121,12 +115,10 @@
                 </div>
                 <div>
                   <div
-                    class=" text-gray-700  bg-white py-3 px-2 shadow-sm rounded-sm mx-10 flex justify-between"
+                    class="text-gray-700 bg-white py-3 px-2 shadow-sm rounded-sm mx-10 flex justify-between"
                   >
-                    <div class="flex items-center ">
-                      <div class="font-bold">
-                        State Semi Final
-                      </div>
+                    <div class="flex items-center">
+                      <div class="font-bold">State Semi Final</div>
                     </div>
                     <div class="flex items-center">Mumbai</div>
                     <div class="flex items-center text-blue-500">
@@ -151,7 +143,7 @@
           </div>
         </div>
         <div
-          class="w-full  justify-center text-center text-white text-2xl pt-8 pb-16"
+          class="w-full justify-center text-center text-white text-2xl pt-8 pb-16"
         >
           <div class="">
             elcome to ‘The Gymnast’ a academy where our goal is to provide a
