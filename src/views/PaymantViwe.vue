@@ -1,0 +1,11 @@
+<template>
+  <div>payment vie</div>
+</template>
+
+<script>
+export default {
+  name: 'PaymentView',
+};
+</script>
+
+<style></style>

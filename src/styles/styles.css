@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-box-app {
+    @apply border-2 rounded-sm bg-white border-solid py-1 px-2 focus:outline-none text-gray-900;
+  }
+}
